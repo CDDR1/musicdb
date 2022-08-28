@@ -1,11 +1,12 @@
 interface Props {
   handleSearch: (text: string) => void;
+  fetchData: (e: any) => void;
 }
 
-const Search = ({ handleSearch = () => {} }: Props) => {
+const Search = ({ handleSearch, fetchData }: Props) => {
   return (
     <div className="search">
-      <form action="" className="search__form">
+      <form onSubmit={(e) => fetchData(e)} action="" className="search__form">
         <label htmlFor="song" className="search__label">
           Search your favoite song!
         </label>

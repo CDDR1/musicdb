@@ -8,7 +8,9 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   
-  const getData = async () => {
+  const getData = async (e: any) => {
+    e.preventDefault();
+
     setLoading(true);
 
     const res: any = await fetch("https://api.spotify.com/v1/search?q=thoughtsofadyingatheist&type=track&limit=30", {
@@ -16,11 +18,11 @@ const App = () => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer BQBoBDHZHIaR3R3zvnA205gwvSDY0oMjVJHDRgAMqPyc_-O4GbMNQdH28J3-g6KNnFkysV0cIXKA-sNSoWO-VUVV_mBYfAvfXKL1FIOJK-WPXlSneL_ITSiN2u24DRZW9jDmn7SS48ikh_bDBMRH6CR1DWJ_VVgXZqZeGvw0yomTpeg7KBVFxcudy_fDFqQwuWQ",
+        Authorization: "Bearer BQB_1ra3IdamK98f4ehP7j-4qa6jj0W1H5EKokKTJL6-fUb0HEeS5tQxIRmwJENgKodlyt3TYHs9p0um-h8oQi4r2vNW7mDC-ipRFH8tJyL8aSbzyl695TkPTDItqRFopDb6J1dHQksXl_iBiDuHzxd2gOnigkS1oudT68lF_LWXCOlD4W8Ct7eXRGdztYD9-fg",
       },
     });
 
-    const data: any = await res.json;
+    const data: any = await res.json(); 
     setSongs(data.tracks.items);
 
     setLoading(false);
@@ -36,7 +38,7 @@ const App = () => {
         <Navbar />
       </header>
       <main>
-        <Search handleSearch={handleInputChange} />
+        <Search handleSearch={handleInputChange} fetchData={getData} />
         {loading ? <h1>Loading...</h1> : <Tracks data={songs} />}
       </main>
       <footer></footer>
