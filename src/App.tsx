@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
 
-function App() {
+const App: FC = () => {
+  const fetchData = async () => {
+    const res: any = await fetch("https://api.spotify.com/v1/search?q=thoughtsofadyingatheist&type=track&limit=30", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer BQBE14RoksZwqOrFsNGVt8qEXfKRMBs5v-RKH9_nC3z9cMfj8cVrApgN4sEnu6icJqya7PhRKCcmEKUb7_oXKw1f1xyxcvSuQ6yfBcxOCl10XgEfQkJxGqpEBsQWuBohuu9jIeJ3V-wwTw-G_4sF7VVtgkj3DSTg5n99WhuvT1CObuhVI7Zs8DBy8j_r18YUyVE",
+      },
+    });
+    const data: any = await res.json();
+    console.log(data.tracks.items);
+  };
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navbar />
   );
-}
+};
 
 export default App;
