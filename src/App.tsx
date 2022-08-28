@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Search from "./components/Search";
 
 const App: FC = () => {
   const fetchData = async () => {
@@ -20,7 +21,15 @@ const App: FC = () => {
   }, []);
 
   return (
-    <Navbar />
+    <div className="container">
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Search />
+      </main>
+      <footer></footer>
+    </div>
   );
 };
 
