@@ -1,8 +1,20 @@
 import { FC } from "react";
+import TrackCard from "./TrackCard";
 
-const Tracks: FC = () => {
+interface Props {
+  data: object
+}
+
+const Tracks: FC<Props> = ({ data }) => {
   return (
-    <h1></h1>
+    <div className="tracks">
+      <h2 className="tracks__title">Songs</h2>
+      <div className="tracks__cards">
+        {
+
+        }
+      </div>
+    </div>
   );
 }
 

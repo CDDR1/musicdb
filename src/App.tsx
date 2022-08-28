@@ -1,23 +1,24 @@
 import { FC, useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
+import Tracks from "./components/Tracks";
 
 const App: FC = () => {
-  const fetchData = async () => {
-    const res: any = await fetch("https://api.spotify.com/v1/search?q=thoughtsofadyingatheist&type=track&limit=30", {
+  const [songs, setSongs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    fetch("https://api.spotify.com/v1/search?q=thoughtsofadyingatheist&type=track&limit=30", {
       method: "GET",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer BQBE14RoksZwqOrFsNGVt8qEXfKRMBs5v-RKH9_nC3z9cMfj8cVrApgN4sEnu6icJqya7PhRKCcmEKUb7_oXKw1f1xyxcvSuQ6yfBcxOCl10XgEfQkJxGqpEBsQWuBohuu9jIeJ3V-wwTw-G_4sF7VVtgkj3DSTg5n99WhuvT1CObuhVI7Zs8DBy8j_r18YUyVE",
+        Authorization: "Bearer BQBoBDHZHIaR3R3zvnA205gwvSDY0oMjVJHDRgAMqPyc_-O4GbMNQdH28J3-g6KNnFkysV0cIXKA-sNSoWO-VUVV_mBYfAvfXKL1FIOJK-WPXlSneL_ITSiN2u24DRZW9jDmn7SS48ikh_bDBMRH6CR1DWJ_VVgXZqZeGvw0yomTpeg7KBVFxcudy_fDFqQwuWQ",
       },
-    });
-    const data: any = await res.json();
-    console.log(data.tracks.items);
-  };
-  
-  useEffect(() => {
-    fetchData();
+    })
+    .then(res => res.json())
+    .then(data => setSongs(data.tracks.items))
+    .catch(err => console.log(err));
   }, []);
 
   return (
@@ -27,6 +28,7 @@ const App: FC = () => {
       </header>
       <main>
         <Search />
+        {loading ? <h1>Loading...</h1> : <Tracks data={songs} />}
       </main>
       <footer></footer>
     </div>
