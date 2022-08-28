@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 interface Props {
   image: string;
   name: string;
@@ -7,7 +5,7 @@ interface Props {
   album: string;
 }
 
-const TrackCard: FC<Props> = ({ image, name, artist, album }) => {
+const TrackCard = ({ image, name, artist, album }: Props) => {
   return (
     <div className="card">
       <div className="card__img-container">

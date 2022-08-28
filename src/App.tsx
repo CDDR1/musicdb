@@ -1,9 +1,9 @@
-import { FC, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import Tracks from "./components/Tracks";
 
-const App: FC = () => {
+const App = () => {
   const [songs, setSongs] = useState([]);
   const [loading, setLoading] = useState(true);
   

@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const Search: FC = () => {
+const Search = () => {
   return (
     <div className="search">
       <form action="" className="search__form">

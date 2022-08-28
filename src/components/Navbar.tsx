@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const Navbar: FC = () => {
+const Navbar = () => {
   return (
     <nav className="navbar">
       <h1 className="navbar__title">MusicDB</h1>
