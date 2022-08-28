@@ -13,7 +13,7 @@ const App = () => {
 
     setLoading(true);
 
-    const res: any = await fetch("https://api.spotify.com/v1/search?q=thoughtsofadyingatheist&type=track&limit=30", {
+    const res: any = await fetch(`https://api.spotify.com/v1/search?q=${searchTerm}&type=track&limit=30`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -29,7 +29,7 @@ const App = () => {
   };
 
   const handleInputChange = (text: string) => {
-    setSearchTerm(text);
+    setSearchTerm(text.replace(/ /g, ""));
   };
 
   return (
@@ -39,7 +39,7 @@ const App = () => {
       </header>
       <main>
         <Search handleSearch={handleInputChange} fetchData={getData} />
-        {loading ? <h1>Loading...</h1> : <Tracks data={songs} />}
+        {loading ? <h1>Loading...</h1> : <Tracks tracks={songs} />}
       </main>
       <footer></footer>
     </div>
