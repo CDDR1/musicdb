@@ -14,14 +14,15 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const res: any = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&resultEntity=music&limit=18`);
+      const res: any = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&resultEntity=music&limit=12`);
       const data: any = await res.json();
       setSongs(data.results);
-      setLoading(false);
     } catch (error) {
       console.log(error);
       return <div>There has been an error fetching the data </div>
     }
+    
+    setLoading(false);
   };
 
   const handleInputChange = (text: string) => {

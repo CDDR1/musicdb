@@ -10,9 +10,10 @@ const Tracks = ({ tracks }: Props) => {
       <h2 className="tracks__title">Songs</h2>
       <div className="tracks__cards">
         {
-          tracks.map((track: any, index: number) => 
+          tracks.map((track: any) => 
             <TrackCard 
-              key={index}
+              key={track?.trackId}
+              id={track?.trackId}
               image={track?.artworkUrl100}
               name={track?.trackName}
               artist={track?.artistName}
