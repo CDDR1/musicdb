@@ -15,8 +15,8 @@ const App = () => {
 
     try {
       const res: any = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&resultEntity=music&limit=18`);
-      const data: any = await res.json(); console.log(data);/////
-      setSongs(data);
+      const data: any = await res.json(); console.log(data.results);/////
+      setSongs(data.results);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ const App = () => {
       </header>
       <main>
         <Search handleSearch={handleInputChange} fetchData={getData} />
-        {/* {loading ? <h1>Loading...</h1> : <Tracks tracks={songs} />} */}
+        {loading ? <h1>Loading...</h1> : <Tracks tracks={songs} />}
       </main>
       <footer></footer>
     </div>

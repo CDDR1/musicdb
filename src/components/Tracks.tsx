@@ -13,10 +13,10 @@ const Tracks = ({ tracks }: Props) => {
           tracks.map((track: any, index: number) => 
             <TrackCard 
               key={index}
-              image={track?.album?.images?.[0].url}
-              name={track?.name}
-              artist={track?.artists?.[0]?.name}
-              album={track?.album?.name}
+              image={track?.artworkUrl100}
+              name={track?.trackName}
+              artist={track?.artistName}
+              album={track?.collectionName}
             />
           )
         }
