@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import Tracks from "./components/Tracks";
@@ -15,7 +15,7 @@ const App = () => {
 
     try {
       const res: any = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&resultEntity=music&limit=18`);
-      const data: any = await res.json(); console.log(data.results);/////
+      const data: any = await res.json();
       setSongs(data.results);
       setLoading(false);
     } catch (error) {
