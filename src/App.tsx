@@ -18,7 +18,7 @@ const App = () => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer BQB_1ra3IdamK98f4ehP7j-4qa6jj0W1H5EKokKTJL6-fUb0HEeS5tQxIRmwJENgKodlyt3TYHs9p0um-h8oQi4r2vNW7mDC-ipRFH8tJyL8aSbzyl695TkPTDItqRFopDb6J1dHQksXl_iBiDuHzxd2gOnigkS1oudT68lF_LWXCOlD4W8Ct7eXRGdztYD9-fg",
+        Authorization: "Bearer BQCnBYpwwV9kkJ-59fSy9RkARL_xARqBUeMhiFuLabDvhcrZ7KCTer7GjIDIWoOfmp3EK71gvEyuU5lT4z83bGSeOB-nc4eBO30_MrVBSdvLtlyrk0fiJCuBKG6utdVSyxGmzeWK_4yeu1XbF5dI2r0XfV6qV5X8QuRuAl37J7OfeQcBxvW5Dl6NTbbGJQTKyUk",
       },
     });
 
