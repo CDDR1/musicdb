@@ -13,23 +13,19 @@ const App = () => {
 
     setLoading(true);
 
-    const res: any = await fetch(`https://api.spotify.com/v1/search?q=${searchTerm}&type=track&limit=30`, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: "Bearer BQCnBYpwwV9kkJ-59fSy9RkARL_xARqBUeMhiFuLabDvhcrZ7KCTer7GjIDIWoOfmp3EK71gvEyuU5lT4z83bGSeOB-nc4eBO30_MrVBSdvLtlyrk0fiJCuBKG6utdVSyxGmzeWK_4yeu1XbF5dI2r0XfV6qV5X8QuRuAl37J7OfeQcBxvW5Dl6NTbbGJQTKyUk",
-      },
-    });
-
-    const data: any = await res.json(); 
-    setSongs(data.tracks.items);
-
-    setLoading(false);
+    try {
+      const res: any = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&resultEntity=music&limit=18`);
+      const data: any = await res.json(); console.log(data);/////
+      setSongs(data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      return <div>There has been an error fetching the data </div>
+    }
   };
 
   const handleInputChange = (text: string) => {
-    setSearchTerm(text.replace(/ /g, ""));
+    setSearchTerm(text);
   };
 
   return (
@@ -39,7 +35,7 @@ const App = () => {
       </header>
       <main>
         <Search handleSearch={handleInputChange} fetchData={getData} />
-        {loading ? <h1>Loading...</h1> : <Tracks tracks={songs} />}
+        {/* {loading ? <h1>Loading...</h1> : <Tracks tracks={songs} />} */}
       </main>
       <footer></footer>
     </div>
