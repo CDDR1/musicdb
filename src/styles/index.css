@@ -141,6 +141,34 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 2.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.card__img {
+  width: 17rem;
+}
+.card__data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.card__title, .card__artist, .card__album {
+  text-align: center;
+}
+.card__artist, .card__album {
+  display: block;
+}
+.card__link {
+  text-decoration: underline;
+}
+.card__link:hover {
+  text-decoration: none;
 }
 
 body {

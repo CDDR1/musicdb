@@ -19,7 +19,7 @@ const TrackCard = ({ id, image, name, artist, album }: Props) => {
         <span className="card__artist">{artist}</span>
         <span className="card__album">{album}</span>
       </div>
-      <Link to={`/track/${id}`} className="card__btn">Details</Link>
+      <Link to={`/track/${id}`} className="card__link">Details</Link>
     </div>
   );
 };
