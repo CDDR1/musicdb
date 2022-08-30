@@ -1,0 +1,10 @@
+@use "variables";
+
+.container {
+  background: linear-gradient(to right, variables.$color-secondary, variables.$color-primary);
+  min-height: 100vh;
+}
+
+main {
+  color: variables.$color-white;
+}

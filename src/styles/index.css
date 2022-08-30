@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+/* || GENERAL STYLES */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+span {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+}
+
+li {
+  display: inline-block;
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+
+input {
+  outline: none;
+}
+
+textarea {
+  overflow: auto;
+  outline: none;
+}
+
+.navbar {
+  padding: 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__title {
+  font-family: "Alfa Slab One", cursive;
+}
+.navbar__repo {
+  text-decoration: underline;
+}
+.navbar__repo:hover {
+  text-decoration: none;
+}
+
+.container {
+  background: linear-gradient(to right, rgb(11, 11, 11), rgb(45, 45, 45));
+  min-height: 100vh;
+}
+
+main {
+  color: #F7F7F7;
+}
+
+body {
+  font-size: 120%;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,22 @@
+@use "variables";
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.navbar {
+  padding: 2rem;
+  background-color: white;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-family: 'Alfa Slab One', cursive;
+  }
+
+  &__repo {
+    text-decoration: underline;
+  }
+
+  &__repo:hover {
+    text-decoration: none;
+  }
+}
