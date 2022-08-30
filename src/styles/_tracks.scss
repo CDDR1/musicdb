@@ -1,0 +1,16 @@
+@use "variables";
+
+.tracks {
+  padding: 1rem;
+
+  &__title {
+    text-align: center;
+    margin: 1rem 0 2rem;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

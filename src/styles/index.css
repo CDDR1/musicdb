@@ -130,6 +130,19 @@ main {
   background-color: #3ca7ce;
 }
 
+.tracks {
+  padding: 1rem;
+}
+.tracks__title {
+  text-align: center;
+  margin: 1rem 0 2rem;
+}
+.tracks__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 body {
   font-size: 120%;
 }/*# sourceMappingURL=index.css.map */
