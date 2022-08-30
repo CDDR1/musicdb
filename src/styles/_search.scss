@@ -28,10 +28,10 @@
     cursor: pointer;
     outline: none;
     border: none;
-    background: #0aa9ff;
+    background: variables.$color-accent;
     color: rgb(239, 239, 239);
     padding: 0.25rem;
-    border: 2px solid #0aa9ff;
+    border: 2px solid variables.$color-accent;
   }
 
   &__submit:hover {
