@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1 className="navbar__title">MusicDB</h1>
       <div className="navbar__repo-container">
-        <BsGithub />
+        <BsGithub className="navbar__github" />
         <a href="https://github.com/CDDR1/musicdb" className="navbar__repo" target="_blank">
           GitHub
         </a>

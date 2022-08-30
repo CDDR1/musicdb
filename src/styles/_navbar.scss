@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 .navbar {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: white;
   display: flex; 
   justify-content: space-between;
@@ -10,6 +10,17 @@
 
   &__title {
     font-family: 'Alfa Slab One', cursive;
+  }
+
+  &__repo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.05rem;
+  }
+
+  &__github {
+    font-size: 200%;
   }
 
   &__repo {
