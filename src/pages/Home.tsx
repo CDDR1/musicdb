@@ -23,6 +23,7 @@ const Home = () => {
     }
     
     setLoading(false);
+    e.target.reset();
   };
 
   const handleInputChange = (text: string) => {
