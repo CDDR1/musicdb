@@ -10,8 +10,10 @@ const Search = ({ handleSearch, fetchData }: Props) => {
         <label htmlFor="song" className="search__label">
           Search your favoite song!
         </label>
-        <input onChange={(e) => handleSearch(e.target.value)} type="text" id="song" className="search__input" placeholder="Enter song name..." />
-        <button className="search__submit">Search</button>
+        <div className="search__input-wrapper">
+          <input onChange={(e) => handleSearch(e.target.value)} type="text" id="song" className="search__input" placeholder="Enter song name..." />
+          <button className="search__submit">Search</button>
+        </div>
       </form>
     </div>
   );

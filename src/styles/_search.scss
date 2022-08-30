@@ -1,0 +1,40 @@
+@use "variables";
+
+.search {
+  background-color: variables.$color-white;
+  color: variables.$color-black;
+  padding: 1rem;
+
+  &__label {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  &__input-wrapper {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    padding: 0.25rem;
+    background-color: rgb(193, 248, 255);
+    border: 2px solid rgb(2, 143, 213);
+    outline: none;
+  }
+
+  &__submit {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #0aa9ff;
+    color: rgb(239, 239, 239);
+    padding: 0.25rem;
+    border: 2px solid #0aa9ff;
+  }
+
+  &__submit:hover {
+    background-color: #3ca7ce
+  }
+}

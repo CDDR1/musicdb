@@ -93,6 +93,41 @@ textarea {
 
 main {
   color: #F7F7F7;
+  padding: 1.5rem;
+}
+
+.search {
+  background-color: #F7F7F7;
+  color: #071013;
+  padding: 1rem;
+}
+.search__label {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+}
+.search__input-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.search__input {
+  padding: 0.25rem;
+  background-color: rgb(193, 248, 255);
+  border: 2px solid rgb(2, 143, 213);
+  outline: none;
+}
+.search__submit {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: #0aa9ff;
+  color: rgb(239, 239, 239);
+  padding: 0.25rem;
+  border: 2px solid #0aa9ff;
+}
+.search__submit:hover {
+  background-color: #3ca7ce;
 }
 
 body {
